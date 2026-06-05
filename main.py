@@ -1,11 +1,8 @@
-"""
-Expense Tracker (CSV / JSON) — Desktop Edition
-----------------------------------------------
-A modern Tkinter dashboard to record, search and analyse daily expenses.
+"""Expense Tracker (CSV / JSON)
 
-Author    : Santosh Kumar
-Intern ID : CT06DN868
-Duration  : 6 Weeks
+A modern Tkinter dashboard to record, search and analyse daily expenses.
+This file contains the main application. Internship and author details
+are kept in the repository documentation (README.md).
 """
 
 import csv
@@ -24,6 +21,9 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 CSV_FILE = os.path.join(DATA_DIR, "expenses.csv")
 JSON_FILE = os.path.join(DATA_DIR, "expenses.json")
 FIELDNAMES = ["date", "category", "description", "amount"]
+# Display/header form for CSV files (Titlecase) — kept separate so the on-disk
+# CSV headers look friendly while internal keys remain lowercase.
+CSV_HEADERS = ["Date", "Category", "Description", "Amount"]
 
 # ---------------------------------------------------------------------------
 # Theme — flat, modern, dashboard-style
@@ -61,8 +61,10 @@ def ensure_files() -> None:
     """Create data folder & files if missing."""
     os.makedirs(DATA_DIR, exist_ok=True)
     if not os.path.exists(CSV_FILE):
+        # Create CSV with friendly Titlecase headers (one-line header only)
         with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
-            csv.DictWriter(f, fieldnames=FIELDNAMES).writeheader()
+            writer = csv.writer(f)
+            writer.writerow(CSV_HEADERS)
     if not os.path.exists(JSON_FILE):
         with open(JSON_FILE, "w", encoding="utf-8") as f:
             json.dump([], f, indent=4)
@@ -74,9 +76,12 @@ def load_expenses() -> list:
     rows = []
     try:
         with open(CSV_FILE, "r", newline="", encoding="utf-8") as f:
-            for row in csv.DictReader(f):
+            reader = csv.DictReader(f)
+            for raw in reader:
+                # Normalize headers to lowercase internal keys so code works
+                row = {(k or "").strip().lower(): v for k, v in raw.items()}
                 try:
-                    row["amount"] = float(row.get("amount", 0))
+                    row["amount"] = float(row.get("amount", 0) or 0)
                 except (TypeError, ValueError):
                     row["amount"] = 0.0
                 rows.append(row)
@@ -88,10 +93,14 @@ def load_expenses() -> list:
 def save_expenses(expenses: list) -> None:
     """Persist expenses to BOTH CSV and JSON."""
     try:
+        # Write CSV using friendly Titlecase headers while mapping internal
+        # lowercase keys to the on-disk header names.
         with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
-            w = csv.DictWriter(f, fieldnames=FIELDNAMES)
-            w.writeheader()
-            w.writerows(expenses)
+            writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
+            writer.writeheader()
+            for e in expenses:
+                row = {h: e.get(h.lower(), "") for h in CSV_HEADERS}
+                writer.writerow(row)
         with open(JSON_FILE, "w", encoding="utf-8") as f:
             json.dump(expenses, f, indent=4)
     except OSError as exc:
@@ -111,8 +120,9 @@ def validate_date(value: str) -> bool:
 
 def validate_amount(value: str) -> bool:
     try:
-        return float(value) >= 0
-    except ValueError:
+        v = float(str(value).strip())
+        return v >= 0
+    except (ValueError, TypeError):
         return False
 
 
@@ -122,7 +132,7 @@ def validate_amount(value: str) -> bool:
 class ExpenseTrackerApp(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
-        self.title("Expense Tracker — CSV / JSON")
+        self.title("Expense Tracker - Personal Finance Manager")
         self.geometry("1180x720")
         self.minsize(960, 600)
         self.configure(bg=COLORS["bg"])
@@ -346,13 +356,13 @@ class ExpenseTrackerApp(tk.Tk):
 
         rows = load_expenses()
         total = sum(float(r["amount"]) for r in rows)
-        cats  = {r.get("category", "—") for r in rows}
-        top_cat = "—"
+        cats = {r.get("category", "—") for r in rows}
+        top_cat = "N/A"
         if rows:
             sums: dict = {}
             for r in rows:
-                sums[r["category"]] = sums.get(r["category"], 0) + float(r["amount"])
-            top_cat = max(sums, key=sums.get)
+                sums[r.get("category", "")] = sums.get(r.get("category", ""), 0) + float(r["amount"])
+            top_cat = max(sums, key=sums.get) if sums else "N/A"
 
         kpi_row = tk.Frame(wrap, bg=COLORS["bg"])
         kpi_row.pack(fill="x")
@@ -366,10 +376,10 @@ class ExpenseTrackerApp(tk.Tk):
             tk.Label(card, text=value, bg=COLORS["card"], fg=color,
                      font=FONT_KPI, anchor="w").pack(fill="x", padx=18)
 
-        kpi(kpi_row, "Total Spent",       f"₹ {total:,.2f}", COLORS["primary"])
-        kpi(kpi_row, "Total Entries",     str(len(rows)),     COLORS["success"])
-        kpi(kpi_row, "Categories",        str(len(cats)) if rows else "0", COLORS["warning"])
-        kpi(kpi_row, "Top Category",      top_cat,            COLORS["danger"])
+        kpi(kpi_row, "Total Spent",   f"₹ {total:,.2f}", COLORS["primary"])
+        kpi(kpi_row, "Total Entries", str(len(rows)),     COLORS["success"])
+        kpi(kpi_row, "Categories",    str(len(cats)),     COLORS["warning"])
+        kpi(kpi_row, "Top Category",  top_cat,            COLORS["danger"])
 
         # Recent expenses table
         tk.Label(wrap, text="Recent Expenses", bg=COLORS["bg"],
@@ -377,11 +387,16 @@ class ExpenseTrackerApp(tk.Tk):
             anchor="w", pady=(22, 8))
 
         table_card = self._card(wrap, fill="both", expand=True)
-        tree = self._make_tree(table_card)
-        for row in rows[-10:][::-1]:
-            tree.insert("", "end",
-                        values=(row["date"], row["category"],
-                                row["description"], f"{float(row['amount']):.2f}"))
+        if not rows:
+            tk.Label(table_card, text="No expenses found. Add your first expense.",
+                     bg=COLORS["card"], fg=COLORS["muted"], font=FONT_SUB,
+                     padx=18, pady=28, anchor="center").pack(expand=True)
+        else:
+            tree = self._make_tree(table_card)
+            for row in rows[-10:][::-1]:
+                tree.insert("", "end",
+                            values=(row.get("date", ""), row.get("category", ""),
+                                    row.get("description", ""), f"{float(row.get('amount', 0)):.2f}"))
 
     # ------------------------------------------------------------------
     # Section: Add expense form
@@ -625,9 +640,10 @@ class ExpenseTrackerApp(tk.Tk):
                 return
             try:
                 with open(path, "w", newline="", encoding="utf-8") as f:
-                    w = csv.DictWriter(f, fieldnames=FIELDNAMES)
-                    w.writeheader()
-                    w.writerows(load_expenses())
+                    writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
+                    writer.writeheader()
+                    for e in load_expenses():
+                        writer.writerow({h: e.get(h.lower(), "") for h in CSV_HEADERS})
                 messagebox.showinfo("Exported", f"Data exported to:\n{path}")
             except OSError as exc:
                 messagebox.showerror("Export failed", str(exc))
