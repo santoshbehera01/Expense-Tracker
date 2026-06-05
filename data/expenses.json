@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2025-06-01",
+        "category": "Food",
+        "description": "Lunch with team",
+        "amount": 450.0
+    },
+    {
+        "date": "2025-06-02",
+        "category": "Travel",
+        "description": "Metro card recharge",
+        "amount": 200.0
+    },
+    {
+        "date": "2025-06-03",
+        "category": "Shopping",
+        "description": "Notebook and pens",
+        "amount": 180.5
+    },
+    {
+        "date": "2025-06-05",
+        "category": "Bills",
+        "description": "Internet bill",
+        "amount": 799.0
+    },
+    {
+        "date": "2026-06-05",
+        "category": "Travel",
+        "description": "Train",
+        "amount": 1200.0
+    }
+]

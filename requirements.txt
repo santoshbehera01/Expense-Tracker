@@ -1,0 +1,5 @@
+# Expense Tracker uses only the Python standard library (tkinter is bundled
+# with Python on Windows and macOS). On most Linux distros install it via:
+#   sudo apt install python3-tk
+#
+# No third-party packages required.
