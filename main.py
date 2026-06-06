@@ -196,7 +196,7 @@ class ExpenseTrackerApp(tk.Tk):
     # ------------------------------------------------------------------
     def _build_layout(self) -> None:
         # Sidebar
-        self.sidebar = tk.Frame(self, bg=COLORS["sidebar"], width=270)
+        self.sidebar = tk.Frame(self, bg=COLORS["sidebar"], width=240)
         self.sidebar.pack(side="left", fill="y")
         self.sidebar.pack_propagate(False)
 
