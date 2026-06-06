@@ -8,7 +8,7 @@ personal expenses through a clean, modern dashboard interface. Data is
 persisted to **CSV** and **JSON**, so it is portable and easy to inspect.
 
 The project was built as part of a **6-week Python internship** by
-**Santosh Kumar (Intern ID: CT06DN868)** and is intended to showcase
+**Santosh Kumar Behera (Intern ID: CITS2854)** and is intended to showcase
 practical software-engineering skills — modular code, validation,
 exception handling, file I/O, and UI/UX design.
 
