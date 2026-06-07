@@ -1,186 +1,267 @@
 # Expense Tracker (CSV / JSON) — Desktop Edition
 
-A modern, dashboard-style **Expense Tracker desktop application** built with
-Python and Tkinter. It looks and feels like a real desktop product —
-sidebar navigation, colored header, KPI cards, professional tables, and
-a status bar — while storing data safely in both **CSV** and **JSON**.
+A modern desktop-based Expense Tracker application developed using Python and Tkinter. The application enables users to manage daily expenses efficiently through an intuitive dashboard interface while storing data securely in both CSV and JSON formats.
 
 ---
 
 ## Intern Details
 
-| Field        | Value                              |
-|--------------|------------------------------------|
-| Project Name | **Expense Tracker (CSV / JSON)**   |
-| Intern Name  | **Santosh Kumar**                  |
-| Intern ID    | **CT06DN868**                      |
-| Duration     | **6 Weeks**                        |
-| Stack        | Python 3.8+ • Tkinter • CSV • JSON |
+| Field | Details |
+|---------|---------|
+| Project Name | Expense Tracker (CSV / JSON) |
+| Intern Name | Santosh Kumar Behera |
+| Intern ID | CITS2854 |
+| Domain | Python Programming |
+| Duration | 6 Weeks |
+| Organization | CODTECH IT Solutions Pvt. Ltd. |
+| Internship Period | 06 June 2026 – 18 July 2026 |
+
+---
+
+## Project Scope
+
+The Expense Tracker is designed to help users record, organize, search, analyze, and export expense data through a professional desktop interface.
+
+The project demonstrates:
+
+- Python GUI Development using Tkinter
+- CSV and JSON File Handling
+- Data Storage & Persistence
+- User Input Validation
+- Expense Analysis & Reporting
+- Dashboard-Based Application Design
+- Software Engineering Best Practices
 
 ---
 
 ## Features
 
-- 📊 **Dashboard** with KPI cards (Total Spent, Entries, Categories, Top Category)
-- ➕ **Add Expense** — form with date, category, description, amount
-- 📋 **All Expenses** — professional Treeview table with scrollbar
-- 🔍 **Search** expenses by category, with subtotal
-- 🗑️ **Delete** any selected expense
-- 📈 **Category-wise Summary** with visual share bars
-- ⬇️ **Export to CSV** to any location on disk
-- 💾 **Dual storage** — every change is written to `data/expenses.csv` and `data/expenses.json`
-- 🛟 **Auto-create** data folder & files on first run
-- 🛡️ **Validation** — non-negative amounts, valid `YYYY-MM-DD` dates, friendly dialogs
-- 🎨 **Modern UI** — sidebar nav, hover states, status bar, colored header, flat buttons
+### Dashboard
+- Total Expense Overview
+- Total Entries Count
+- Categories Count
+- Top Spending Category
+- Recent Expenses Table
+
+### Expense Management
+- Add New Expenses
+- View All Expenses
+- Delete Existing Expenses
+- Input Validation
+
+### Search & Analysis
+- Search Expenses by Category
+- Category-wise Summary
+- Expense Statistics
+
+### Data Management
+- CSV Storage
+- JSON Storage
+- Automatic File Creation
+- Export Data to CSV
+
+### User Interface
+- Modern Sidebar Navigation
+- Professional Dashboard Layout
+- Responsive Tkinter Widgets
+- Clean and User-Friendly Design
 
 ---
 
 ## Technologies Used
 
-| Layer        | Tech                                          |
-|--------------|-----------------------------------------------|
-| Language     | Python 3.8+                                   |
-| GUI          | Tkinter + ttk (Treeview, Combobox, Entry)     |
-| Storage      | CSV and JSON (standard library)               |
-| OS support   | Windows • macOS • Linux                       |
-| Dependencies | None (standard library only)                  |
+| Category | Technology |
+|-----------|------------|
+| Language | Python 3 |
+| GUI Framework | Tkinter |
+| Data Storage | CSV, JSON |
+| Libraries | csv, json, os, tkinter, datetime |
+| IDE | Visual Studio Code |
+| Version Control | Git & GitHub |
 
 ---
 
 ## Folder Structure
 
-```
-ExpenseTracker/
+```text
+Expense-Tracker/
 │
-├── main.py                       # Main Tkinter application
-├── data/
-│   ├── expenses.csv              # CSV store (auto-created)
-│   └── expenses.json             # JSON store (auto-created)
+├── .gitignore
+├── main.py
+├── README.md
+├── requirements.txt
+│
 ├── assets/
-│   └── icons/                    # App icons (optional)
-├── screenshots/                  # Place your UI screenshots here
+│   └── icons/
+│
+├── data/
+│   ├── expenses.csv
+│   └── expenses.json
+│
 ├── documentation/
-│   ├── PROJECT_DOC.md            # Full project documentation
-│   └── USER_MANUAL.md            # Step-by-step user manual
-├── README.md                     # This file
-└── requirements.txt              # Dependency notes
+│   ├── PROJECT_DOC.md
+│   └── USER_MANUAL.md
+│
+└── screenshots/
+    ├── dashboard.png
+    ├── add_expense.png
+    ├── all_expenses.png
+    ├── search.png
+    └── summary.png
 ```
 
 ---
 
-## Installation Guide
+## Installation
 
-### 1. Prerequisites
-
-- **Python 3.8+** (Tkinter is bundled on Windows and macOS).
-- On Debian/Ubuntu Linux install Tk once:
-  ```bash
-  sudo apt install python3-tk
-  ```
-
-### 2. Get the project
+### Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/ExpenseTracker.git
-cd ExpenseTracker
+git clone https://github.com/santoshbehera01/Expense-Tracker.git
+cd Expense-Tracker
 ```
 
-### 3. (Optional) virtual environment
-
-```bash
-python -m venv venv
-source venv/bin/activate          # macOS / Linux
-venv\Scripts\activate             # Windows
-```
-
-### 4. Run the app
+### Run Application
 
 ```bash
 python main.py
 ```
 
-The data folder and files will be created automatically on first launch.
-
 ---
 
-## Usage Instructions
+## Usage
 
-1. Launch the app — the **Dashboard** opens by default with KPIs and the
-    10 most recent expenses.
-2. Use the **left sidebar** to navigate:
-   - **Add Expense** — fill the form and click *Save Expense*.
-   - **All Expenses** — see every record; select a row and click
-     *Delete Selected* to remove it.
-   - **Search** — type a category (e.g. `Food`) and press *Search* or
-     Enter; the subtotal appears at the bottom-right.
-   - **Summary** — view a category-wise breakdown with share bars.
-   - **Export CSV** — save a copy of your data anywhere on disk.
-3. The **status bar** at the bottom always shows the live total and the
-   storage file paths.
+### Add Expense
+1. Open the application.
+2. Click "Add Expense".
+3. Enter Date, Category, Description, and Amount.
+4. Click Save Expense.
+
+### View Expenses
+1. Navigate to "All Expenses".
+2. Browse all stored records.
+3. Delete selected records if required.
+
+### Search Expenses
+1. Open "Search".
+2. Enter category name.
+3. View matching records instantly.
+
+### Summary
+1. Open "Summary".
+2. Analyze category-wise spending.
+
+### Export Data
+1. Open "Export CSV".
+2. Save a copy of expense data to any location.
 
 ---
 
 ## Screenshots
 
-> Add your screenshots to the `screenshots/` folder.
+### Dashboard
 
-```
-screenshots/
-├── 01_dashboard.png
-├── 02_add_expense.png
-├── 03_all_expenses.png
-├── 04_search.png
-└── 05_summary.png
-```
+![Dashboard](screenshots/dashboard.png)
 
-Embed in your GitHub README like:
+### Add Expense
 
-```markdown
-![Dashboard](screenshots/01_dashboard.png)
-```
+![Add Expense](screenshots/add_expense.png)
 
----
+### All Expenses
 
-## Sample Data
+![All Expenses](screenshots/all_expenses.png)
 
-### `data/expenses.csv`
+### Search
 
-```csv
-date,category,description,amount
-2025-06-01,Food,Lunch with team,450.00
-2025-06-02,Travel,Metro card recharge,200.00
-2025-06-03,Shopping,Notebook and pens,180.50
-2025-06-04,Food,Groceries,1250.75
-2025-06-05,Bills,Internet bill,799.00
-```
+![Search](screenshots/search.png)
 
-### `data/expenses.json`
+### Summary
 
-```json
-[
-    {"date": "2025-06-01", "category": "Food", "description": "Lunch with team", "amount": 450.0},
-    {"date": "2025-06-02", "category": "Travel", "description": "Metro card recharge", "amount": 200.0},
-    {"date": "2025-06-03", "category": "Shopping", "description": "Notebook and pens", "amount": 180.5}
-]
-```
+![Summary](screenshots/summary.png)
 
 ---
 
-## Future Improvements
+## Documentation
 
-- Charts and graphs (matplotlib / plotly) inside the dashboard.
-- Monthly **budgets** and **alerts** when overspending.
-- Filtering by **date range** in addition to category.
-- **Edit** an existing expense from the table.
-- Export to **Excel** and **PDF** reports.
-- **Dark mode** toggle.
-- Cloud sync with Google Sheets or Firebase.
-- Package as a single-file executable using `pyinstaller`.
+Detailed project documentation is available in:
+
+```text
+documentation/
+├── PROJECT_DOC.md
+└── USER_MANUAL.md
+```
+
+These files include:
+
+- Project Architecture
+- Working Procedure
+- UI Design Decisions
+- Feature Explanations
+- User Guide
+- Troubleshooting
+
+---
+
+## Data Storage
+
+The application stores data in:
+
+### CSV File
+
+```text
+data/expenses.csv
+```
+
+### JSON File
+
+```text
+data/expenses.json
+```
+
+Both files are automatically created when the application runs for the first time.
+
+---
+
+## Future Enhancements
+
+- Monthly Budget Management
+- Expense Charts & Graphs
+- PDF Export
+- Excel Export
+- Date Range Filters
+- Dark Mode
+- Cloud Backup
+- User Authentication
+
+---
+
+## Learning Outcomes
+
+Through this project, the following concepts were implemented:
+
+- Python Programming
+- GUI Development
+- File Handling
+- Data Persistence
+- Input Validation
+- Modular Programming
+- Software Documentation
+- Git & GitHub Workflow
 
 ---
 
 ## Author
 
-**Santosh Kumar** — Intern ID `CT06DN868`
-Built during a **6-week Python internship** as a portfolio-grade
-desktop project, suitable for **GitHub** and **LinkedIn** showcases.
+**Santosh Kumar Behera**
+
+Intern ID: CITS2854
+
+Python Programming Intern
+
+CODTECH IT Solutions Pvt. Ltd.
+
+---
+
+## License
+
+This project was developed for educational and internship purposes under the CODTECH IT Solutions Pvt. Ltd. Python Programming Internship Program.
