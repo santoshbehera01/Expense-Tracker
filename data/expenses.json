@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "date": "2026-06-06",
+        "category": "Education",
+        "description": "Registration",
+        "amount": 1550.0
+    },
+    {
+        "date": "2026-06-06",
+        "category": "Travel",
+        "description": "Train Ticket",
+        "amount": 332.5
+    },
+    {
+        "date": "2026-06-06",
+        "category": "Food",
+        "description": "Lunch",
+        "amount": 210.0
+    }
+]
