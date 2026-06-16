@@ -257,7 +257,6 @@ Through this project, the following concepts were implemented:
 Intern ID: CITS2854
 
 Python Programming Intern
-
 CODTECH IT Solutions Pvt. Ltd.
 
 ---
