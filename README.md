@@ -255,8 +255,7 @@ Through this project, the following concepts were implemented:
 **Santosh Kumar Behera**
 
 Intern ID: CITS2854
-
-Python Programming Intern
+Programming Intern
 
 CODTECH IT Solutions Pvt. Ltd.
 
