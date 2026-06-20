@@ -64,7 +64,7 @@ The project demonstrates:
 - Modern Sidebar Navigation
 - Professional Dashboard Layout
 - Responsive Tkinter Widgets
-- Clean and User-Friendly Design
+- Clean and User Friendly Design
 
 ---
 
