@@ -29,7 +29,7 @@ The project demonstrates:
 - Data Storage & Persistence
 - User Input Validation
 - Expense Analysis & Reporting
-- Dashboard-Based Application Design
+- Dashboard Based Application Design
 - Software Engineering Best Practices
 
 ---
