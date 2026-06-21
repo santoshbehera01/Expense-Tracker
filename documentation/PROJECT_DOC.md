@@ -73,7 +73,7 @@ Storage Layer
 - View All Expenses
 - Search by Category
 - Delete Expense Records
-- Category-wise Summary
+- Category wise Summary
 - Export Data to CSV
 - Automatic File Creation
 - Input Validation
