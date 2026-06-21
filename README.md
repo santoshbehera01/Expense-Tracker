@@ -51,7 +51,7 @@ The project demonstrates:
 
 ### Search & Analysis
 - Search Expenses by Category
-- Category-wise Summary
+- Category wise Summary
 - Expense Statistics
 
 ### Data Management
