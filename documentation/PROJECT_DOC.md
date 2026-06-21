@@ -23,7 +23,7 @@ The project was developed to demonstrate practical implementation of Python prog
 
 ## 2. Objectives
 
-- Develop a user-friendly desktop application.
+- Develop a user friendly desktop application.
 - Implement expense data management using CSV and JSON.
 - Apply input validation and exception handling.
 - Provide expense tracking and analysis features.
