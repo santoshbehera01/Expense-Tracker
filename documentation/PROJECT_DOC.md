@@ -15,7 +15,7 @@
 
 ## 1. Introduction
 
-Expense Tracker is a desktop-based application developed using Python and Tkinter. The application enables users to manage daily expenses through a modern graphical user interface while storing data in both CSV and JSON formats.
+Expense Tracker is a desktop based application developed using Python and Tkinter. The application enables users to manage daily expenses through a modern graphical user interface while storing data in both CSV and JSON formats.
 
 The project was developed to demonstrate practical implementation of Python programming concepts including GUI development, file handling, data persistence, validation, and software documentation.
 
