@@ -149,7 +149,7 @@ python main.py
 
 ### Summary
 1. Open "Summary".
-2. Analyze category-wise spending.
+2. Analyze category wise spending.
 
 ### Export Data
 1. Open "Export CSV".
