@@ -264,7 +264,6 @@ This project demonstrates:
 **Santosh Kumar Behera**
 
 - 👨‍💻 B.Tech Computer Science & Engineering student  
-- 🌱 Learning **Python Programming, Data Structures & Backend Development**  
 - 💡 Interested in **Software Development & Problem Solving**
 
 ---
