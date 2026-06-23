@@ -46,7 +46,7 @@
 
 - All fields are mandatory.
 - Invalid date format displays an error message.
-- Negative or non-numeric amounts are rejected.
+- Negative or non numeric amounts are rejected.
 
 ---
 
