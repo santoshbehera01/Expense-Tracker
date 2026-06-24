@@ -68,7 +68,7 @@ The expense will be validated and stored automatically.
 
 The **Summary** page provides:
 
-- Category-wise expense totals
+- Category wise expense totals
 - Spending distribution
 - Overall expense analysis
 - Grand total calculation
