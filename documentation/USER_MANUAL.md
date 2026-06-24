@@ -1,136 +1,133 @@
 # User Manual — Expense Tracker
 
-**Project Name:** Expense Tracker (CSV / JSON)
-**Intern Name:** Santosh Kumar Behera
-**Intern ID:** CITS2854
-**Duration:** 6 Weeks
-
----
-
 ## 1. Starting the Application
 
 1. Open a terminal in the project folder.
 2. Run:
 
-   ```bash
-   python main.py
-   ```
+```bash
+python main.py
+```
 
-3. The application window opens at the **Dashboard**.
+3. The application will launch and open the **Dashboard** page.
 
 ---
 
-## 2. Window Layout
+## 2. Interface Overview
 
-- **Sidebar (Left):** Navigation between application sections.
-- **Header (Top):** Displays the current section title and today's date.
-- **Content Area (Center):** Displays the selected feature page.
-- **Status Bar (Bottom):** Shows the total expense amount and storage information.
+The application consists of four main sections:
+
+- **Sidebar Navigation** — Access different features.
+- **Header Section** — Displays the current page title.
+- **Content Area** — Shows the selected page content.
+- **Status Bar** — Displays application status and information.
 
 ---
 
 ## 3. Adding an Expense
 
-1. Click **Add Expense** from the sidebar.
-2. Fill in the following details:
+1. Navigate to **Add Expense**.
+2. Enter the following details:
 
-   - **Date** — Format: `YYYY-MM-DD`
-   - **Category** — Select from the dropdown or enter your own.
-   - **Description** — Brief expense description.
-   - **Amount** — Enter a non-negative numeric value.
+   - Date (`YYYY-MM-DD`)
+   - Category
+   - Description
+   - Amount
 
 3. Click **Save Expense**.
-4. A confirmation message will appear, and the form will reset.
+
+The expense will be validated and stored automatically.
 
 ### Validation Rules
 
-- All fields are mandatory.
-- Invalid date format displays an error message.
-- Negative or non numeric amounts are rejected.
+- All fields are required.
+- Amount must be a valid non-negative number.
+- Date must follow the format `YYYY-MM-DD`.
 
 ---
 
-## 4. Viewing All Expenses
+## 4. Viewing Expenses
 
-1. Click **All Expenses**.
-2. Browse all stored expense records in the table.
-3. To delete an expense:
-
-   - Select one or more rows.
-   - Click **🗑 Delete Selected**.
-   - Confirm the deletion.
-
-4. Click **🔄 Refresh** to reload data from storage.
+1. Open **All Expenses**.
+2. Browse expense records in the table.
+3. Select a record to delete if needed.
+4. Click **Refresh** to reload data.
 
 ---
 
 ## 5. Searching Expenses
 
-1. Click **Search**.
-2. Enter a category name (e.g., `Food`).
-3. Press **Search** or hit **Enter**.
-4. Matching expenses will be displayed.
-5. The subtotal for matching records appears at the bottom.
+1. Open **Search**.
+2. Enter a category name.
+3. Click **Search** or press **Enter**.
+4. Matching records will be displayed instantly.
 
 ---
 
-## 6. Category-wise Summary
+## 6. Expense Summary
 
-1. Click **Summary**.
-2. View spending grouped by category.
-3. Each category displays:
+The **Summary** page provides:
 
-   - Total Amount
-   - Percentage Share
-   - Visual Expense Bar
+- Category-wise expense totals
+- Spending distribution
+- Overall expense analysis
+- Grand total calculation
 
-4. The **Grand Total** is displayed at the bottom.
+This helps users understand spending patterns more effectively.
 
 ---
 
-## 7. Exporting Data to CSV
+## 7. Exporting Data
 
-1. Click **Export CSV**.
-2. Click **⬇ Export to CSV**.
-3. Select a destination folder.
-4. Enter a filename and click **Save**.
-5. A confirmation message will display the saved location.
+1. Open **Export CSV**.
+2. Click **Export to CSV**.
+3. Choose a destination folder.
+4. Save the exported file.
+
+The exported CSV file can be opened in Excel, Google Sheets, or other spreadsheet applications.
 
 ---
 
 ## 8. Data Storage
 
-The application automatically stores data in the following files:
-
-### CSV Storage
+Expense records are stored automatically in:
 
 ```text
-data/expenses.csv
+data/
+├── expenses.csv
+└── expenses.json
 ```
 
-### JSON Storage
-
-```text
-data/expenses.json
-```
-
-Both files are automatically created when the application is launched for the first time and are updated whenever expenses are added or deleted.
+Both files are created automatically during the first application launch.
 
 ---
 
 ## 9. Troubleshooting
 
-| Issue                                  | Recommended Solution                                                  |
-|-----------------------------------------|----------------------------------------------------------------------|
-| `ModuleNotFoundError: _tkinter`         | Install Tkinter using `sudo apt install python3-tk` (Linux systems). |
-| Application window does not open        | Ensure the application is running in a desktop environment with GUI support. |
-| Invalid amount entered                  | Enter a valid non-negative numeric value such as `120` or `49.99`.   |
-| Invalid date format                     | Use the format `YYYY-MM-DD` (Example: `2026-06-05`).                 |
-| Missing or deleted data files           | Restart the application. Required CSV and JSON files will be recreated automatically. |
+| Issue | Solution |
+|---------|----------|
+| Application does not start | Verify Python 3.8+ is installed correctly. |
+| Tkinter module missing | Install Tkinter (`sudo apt install python3-tk` on Linux). |
+| Invalid amount entered | Enter a valid numeric value. |
+| Invalid date format | Use `YYYY-MM-DD` format. |
+| Missing data files | Restart the application; files will be recreated automatically. |
+
 ---
 
-## 10. Conclusion
+## 10. Features at a Glance
 
-The Expense Tracker application provides a simple and efficient way to manage daily expenses through a modern desktop interface. Users can record, search, analyze, and export expense data while maintaining reliable storage in both CSV and JSON formats.
+- Dashboard Overview
+- Add Expense
+- View All Expenses
+- Search Expenses
+- Expense Summary
+- CSV Export
+- CSV & JSON Storage
+- Input Validation
+- User-Friendly Interface
 
-This project was developed as part of the **Python Programming Internship Program** at **CODTECH IT Solutions Pvt. Ltd.** and demonstrates practical implementation of Python GUI development, file handling, data management, and software engineering best practices.
+---
+
+## 11. Conclusion
+
+Expense Tracker is a desktop application designed to simplify personal expense management. It allows users to record, organize, analyze, and export financial data through a clean and intuitive interface while demonstrating practical use of Python, Tkinter, file handling, and data persistence techniques.
