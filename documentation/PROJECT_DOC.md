@@ -55,7 +55,7 @@ Data Storage
 - Add and delete expenses
 - View all expense records
 - Search expenses by category
-- Category-wise spending summary
+- Category wise spending summary
 - CSV export functionality
 - Automatic data persistence
 - User friendly interface
