@@ -58,7 +58,7 @@ Data Storage
 - Category-wise spending summary
 - CSV export functionality
 - Automatic data persistence
-- User-friendly interface
+- User friendly interface
 
 ---
 
