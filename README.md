@@ -1,6 +1,6 @@
 # 💰 Expense Tracker (CSV / JSON)
 
-A modern desktop-based Expense Tracker application built with Python and Tkinter. The application helps users record, organize, search, analyze, and export expense data through an intuitive dashboard interface while securely storing data in both CSV and JSON formats.
+A modern desktop based Expense Tracker application built with Python and Tkinter. The application helps users record, organize, search, analyze, and export expense data through an intuitive dashboard interface while securely storing data in both CSV and JSON formats.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-orange)
