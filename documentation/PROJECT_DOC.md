@@ -81,7 +81,7 @@ Files are automatically created during the first application launch.
 - Required fields validation
 - Numeric amount validation
 - Exception handling for file operations
-- User-friendly error messages
+- User friendly error messages
 
 ---
 
