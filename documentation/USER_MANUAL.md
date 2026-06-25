@@ -124,7 +124,7 @@ Both files are created automatically during the first application launch.
 - CSV Export
 - CSV & JSON Storage
 - Input Validation
-- User-Friendly Interface
+- User Friendly Interface
 
 ---
 
