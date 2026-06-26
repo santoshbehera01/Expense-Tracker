@@ -154,7 +154,7 @@ No additional third-party libraries are required.
 ### Analyze Spending
 
 1. Open **Summary**.
-2. Review category-wise spending.
+2. Review category wise spending.
 3. Analyze overall expense trends.
 
 ### Export Data
