@@ -41,7 +41,7 @@ The project demonstrates practical implementation of:
 - Add New Expenses
 - View All Expenses
 - Delete Existing Expenses
-- Real-Time Data Updates
+- Real Time Data Updates
 - Input Validation
 
 ### 🔍 Search & Analysis
