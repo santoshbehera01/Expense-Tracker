@@ -21,7 +21,7 @@ The project demonstrates practical implementation of:
 - File Handling & Data Persistence
 - User Input Validation
 - Expense Analysis & Reporting
-- Dashboard-Based Application Design
+- Dashboard Based Application Design
 - Software Engineering Best Practices
 
 ---
