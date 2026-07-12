@@ -130,4 +130,4 @@ Both files are created automatically during the first application launch.
 
 ## 11. Conclusion
 
-Expense Tracker is a desktop application designed to simplify personal expense management. It allows users to record, organize, analyze, and export financial data through a clean and intuitive interface while demonstrating practical use of Python, Tkinter, file handling, and data persistence techniques..
+Expense Tracker is a desktop application designed to simplify personal expense management. It allows users to record, organize, analyze, and export financial data through a clean and intuitive interface while demonstrating practical use of Python, Tkinter, file handling, and data persistence techniques.
