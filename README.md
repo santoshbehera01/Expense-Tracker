@@ -270,4 +270,4 @@ This project demonstrates:
 
 ## 📄 License
 
-This project is released under the MIT License and is intended for learning, personal use, and portfolio demonstration purposes.
+This project is released under the MIT License and is intended for learning, personal use, and portfolio demonstration purposes...
