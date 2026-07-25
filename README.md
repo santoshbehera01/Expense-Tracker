@@ -142,7 +142,7 @@ No additional third-party libraries are required.
 ### View Expenses
 
 1. Navigate to **All Expenses**.
-2. Browse all stored records.
+2. Browse all stored records
 3. Delete selected records when required.
 
 ### Search Expenses
