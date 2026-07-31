@@ -97,4 +97,4 @@ Files are automatically created during the first application launch.
 
 ## 9. Conclusion
 
-Expense Tracker demonstrates practical implementation of Python GUI development, file handling, data persistence, and software design principles. It provides a simple and effective solution for managing personal expenses through a modern desktop interface..
+Expense Tracker demonstrates practical implementation of Python GUI development, file handling, data persistence, and software design principles. It provides a simple and effective solution for managing personal expenses through a modern desktop interface.
