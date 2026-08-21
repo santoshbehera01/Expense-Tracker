@@ -143,7 +143,7 @@ No additional third-party libraries are required.
 
 1. Navigate to **All Expenses**.
 2. Browse all stored records.
-3. Delete selected records when required
+3. Delete selected records when required.
 
 ### Search Expenses
 
